@@ -41,7 +41,7 @@ subplot(4,1,4) % i_A Strangstrom
     title('Strangstrom')
     hold off;
 
-saveas(figure(gcf), 'S:\Dokumente\Master\NPC_Inverter\plots\POD_PWM_plots.png')
+saveas(figure(gcf), 'S:\Dokumente\Master\NPC_Inverter\plots\teil_a\POD_PWM_plots.png')
 
 %% Plots for PD PWM generation - xy-Diagramm I
 
@@ -54,7 +54,7 @@ set(gcf1, 'position', [300, -100, 800, 800])
     grid minor
     % legend('i_a_N')
     title('Strangstrom')
-saveas(figure(gcf1), 'S:\Dokumente\Master\NPC_Inverter\plots\POD_xy_I.png')
+saveas(figure(gcf1), 'S:\Dokumente\Master\NPC_Inverter\plots\teil_a\POD_xy_I.png')
 %% Plots for PD PWM generation - xy-Diagramm U
 
 gcf2 = figure('Name', 'XY-Diagramm');
@@ -68,6 +68,6 @@ set(gcf2, 'position', [300, -100, 800, 800])
     hold off;
     legend('u_x_N_,_i_s_t', 'u_x_N_,_s_o_l_l')
     title('Raumzeiger der Strangspannung vgl. Soll und Ist')
-saveas(figure(gcf2), 'S:\Dokumente\Master\NPC_Inverter\plots\POD_xy_U.png')
+saveas(figure(gcf2), 'S:\Dokumente\Master\NPC_Inverter\plots\teil_a\POD_xy_U.png')
     
 

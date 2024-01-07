@@ -1,31 +1,26 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Neutral Point clamped Inverter with Sinus PWM
+% Neutral Point clamped Inverter mit Sinus PWM
 % ausgewaehlte Kapitel Power Electronics WS 2023/24
 % Tim Spilak 203864
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 clear all
-%% Simulation parameters
-Ts = 1e-6;          % [ s ] sampling time simulation
-Tsim = 4e-2;        % [ s ] simulation time
-fc = 2000;          % [ Hz ] frequenc
-Tc = 1/fc;          % [ s ] sampling time
-TA = Tc;            % [ s ] sampling time
+%% Definition der Zeiten
+Ts = 1e-6;          % [ s ] Simulationsschrittweite
+Tsim = 4e-2;        % [ s ] Simulationsdauer
 
-%% plant parameters
-Ud = 700;           % [ V ] source voltage DC
-RL = 10;            % [ Ohm ] load resistance
-LL = 20e-3;         % [ H ] load inductance
+fc = 2000;          % [ Hz ] PWM-Frequenz Stromrichter
+Tc = 1/fc;          % [ s ]  PWM-Periodendauer Stromrichter
+TA = Tc;            % [ s ]  btastzeit fuer Regelung
+f = 50;             % [ Hz ] Frezquenz fuer die Ansteuerung
 
-%% normalization and limitation
-Umax = Ud/2;
-mmin = -0.95;
-mmax = 0.95;
+%% Definition der Parameter
+Ud = 700;           % [ V ] Zwischenkreisspannung
+Umax = Ud/2;        % [ V ] maximale Spannung
+mmin = -0.95;       % minimaler Modulationsgrad
+mmax = 0.95;        % maximaler Modulationsgrad
 
-%% target specification
-Uamp = Ud/2;
-f = 50;             % [ Hz ] target frequency
+RL = 10;            % [ Ohm ] Lastwiderstand
+LL = 20e-3;         % [ H ]   Lastinduktivitaet
 
-%% time discrete controller
-zR1 = 0.1;
 
 
