@@ -21,7 +21,7 @@ subplot(2,1,2) % i_qw, i_qN q-Stroeme
     grid on
     grid minor
     legend('i_q_w', 'i_q_N')
-    title('Soll- und Ist-d-Strom')
+    title('Soll- und Ist-q-Strom')
     hold off;
 
 saveas(figure(gcf), 'S:\Dokumente\Master\NPC_Inverter\plots\teil_b\POD_current_plots.png')
